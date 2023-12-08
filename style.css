@@ -1,0 +1,234 @@
+/* RESET */
+* {
+  box-sizing: border-box;
+  cursor: pointer;
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+}
+/* SET VARIABLE */
+:root {
+  --TEXT-COLOR: white;
+}
+/* BODY */
+body {
+  background-color: black;
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+/* HEADER */
+header {
+  color: var(--TEXT-COLOR);
+  display: flex;
+  justify-content: space-between;
+  padding: 0.8rem 1rem;
+  animation: header 2s ease-in-out;
+}
+@keyframes header {
+  0% {
+    transform: translateY(-100%);
+  }
+}
+/* HEADER INSIDE IMAGE */
+header img {
+  width: 200px;
+  height: 75px;
+  margin-left: 1%;
+}
+/* NAV INSIDE LIST */
+nav li {
+  display: inline-block;
+  font-weight: 600;
+  margin: 1.2rem 1rem;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+}
+nav li::after {
+  background-color: var(--TEXT-COLOR);
+  bottom: -2px;
+  content: "";
+  height: 2px;
+  left: 0;
+  position: absolute;
+  transition: 0.4s linear;
+  width: 0%;
+}
+nav li:hover::after {
+  width: 100%;
+}
+/* nav li:first-child:hover {
+  transform: scale(1.5);
+}
+nav li:nth-child(2):hover {
+  transform: scale(1.5);
+}
+nav li:last-child:hover {
+  transform: scale(1.5);
+} */
+nav li:hover {
+  transform: scale(1.5);
+}
+/* MAIN */
+main {
+  display: flex;
+  width: 100%;
+}
+/* MAIN INSIDE CONTENT */
+.content {
+  color: var(--TEXT-COLOR);
+  margin-left: 5%;
+  margin-top: 8%;
+  width: 50%;
+  overflow: hidden;
+  animation: content 2s ease-in-out;
+}
+@keyframes content {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%);
+  }
+}
+/* CONTENT INSIDE H1 */
+.content h1 {
+  font-size: 4rem;
+  letter-spacing: 0.5rem;
+  margin-bottom: 1%;
+}
+/* CONTENT INSIDE H3 */
+.content h3 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1.5rem;
+  margin-bottom: 3%;
+}
+/* HIGHTLIGHT WORD */
+.hightlight {
+  color: yellow;
+}
+/* CONTENT INSIDE PARAGRAPH */
+.content p {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1.2rem;
+  margin-bottom: 3%;
+}
+/* BUTTON */
+button {
+  background-color: transparent;
+  border-radius: 10px;
+  color: var(--TEXT-COLOR);
+  font-size: 1.2rem;
+  padding: 0.8rem 1.5rem;
+}
+button:hover {
+  background-color: rgb(255, 10, 10);
+}
+/* MAIN INSIDE PICTURE */
+main picture {
+  margin-top: 8%;
+  width: 50%;
+  z-index: -1;
+}
+/* PICTURE INSIDE IMAGE */
+picture img {
+  animation: image 4s ease-in-out forwards;
+  width: 40rem;
+}
+@keyframes image {
+  0% {
+    transform: translateX(100%);
+  }
+  80% {
+    transform: translateX(-220%);
+  }
+  85% {
+    transform: translateX(120%);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(0%);
+  }
+}
+/* TO MAKE RESPONSIVE */
+@media screen and (max-width: 1200px) {
+  .content {
+    text-align: center;
+    width: 100%;
+  }
+  main picture {
+    bottom: -5%;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+  }
+  picture img {
+    width: 20rem;
+    animation: image 5s ease-in-out forwards;
+  }
+  @keyframes image {
+    0% {
+      transform: translateX(235%);
+    }
+    80% {
+      transform: translateX(-220%);
+    }
+    85% {
+      transform: translateX(120%);
+      opacity: 0;
+    }
+    100% {
+      transform: translate(0%);
+    }
+  }
+}
+@media screen and (max-width: 576px) {
+  header {
+    margin-top: 0.8rem;
+  }
+  header img {
+    width: 109px;
+    height: 50px;
+  }
+  nav li {
+    margin: 0.8rem 1rem;
+  }
+  .content {
+    text-align: center;
+    width: 100%;
+    margin-top: 125px;
+  }
+  :is(.content h1, .content h3) {
+    margin-bottom: 5%;
+  }
+  button {
+    margin-bottom: 2%;
+    margin-right: 2%;
+    margin-top: 3%;
+  }
+  main picture {
+    bottom: -3%;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+  }
+  picture img {
+    width: 20rem;
+    animation: image 4s ease-in-out forwards;
+  }
+  @keyframes image {
+    0% {
+      transform: translateX(110%);
+    }
+    80% {
+      transform: translateX(-120%);
+    }
+    85% {
+      transform: translateX(110%);
+      opacity: 0;
+    }
+    100% {
+      transform: translate(0%);
+    }
+  }
+}
